@@ -8,9 +8,9 @@ q_factor = 15  # Q15 format for fixed-point signals
 
 # Read input and output signals
 input_signal = fp.reads("input.pcm")  # Input signal from file
-output_signal = fp.reads("Output_of_C_Code/out.pcm")  # Output signal from file
+# output_signal = fp.reads("Output_of_C_Code/out.pcm")  # Output signal from file
 
-# output_signal = fp.reads("Output_of_Assembly_Code/out.pcm")  # Output signal from file
+output_signal = fp.reads("Output_of_Assembly_Code/out.pcm")  # Output signal from file
 
 # Convert signals back to floating-point
 input_signal_float = input_signal / (2 ** q_factor)

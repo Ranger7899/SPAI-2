@@ -3,11 +3,11 @@
 int anf(int y, int *s, int *a, int *rho, unsigned int* index)
 {
     /*
-     y in Q15: newly captured sample
+     y in Q14: newly captured sample
      s in Q12: x[3] databuffer - Hint: Reserve a sufficiently number of integer bits such that summing intermediate values does not cause overflow (so no shift is needed after summing numbers)
-     a in Q14: the adaptive coefficient
+     a in Q13: the adaptive coefficient
      e in Q15: output signal
-     rho in Q15: fixed {rho, rho^2} or variable {rho, rho_inf} pole radius
+     rho in : fixed {rho, rho^2} or variable {rho, rho_inf} pole radius
      index : points to (t-1) sample (t current time index) in s -> circular buffer
      */
         
@@ -44,7 +44,7 @@ int anf(int y, int *s, int *a, int *rho, unsigned int* index)
 
     // Step 4: Adaptive coefficient update
     AC1 = (long)s[k1] * (long)e;                   // s[k1] * e (Q12 * Q15 = Q27)
-    AC1 = (AC1 >> 14) * 2;                         // Scale to Q14 and multiply by 2
+    AC1 = (AC1 >> 14) * mu;                        // Scale to Q14 and multiply by mu
     *a += (int)AC1;                                // Update adaptive coefficient
 
     // Step 5: Constrain adaptive coefficient to |a| < 2 (Q14)
