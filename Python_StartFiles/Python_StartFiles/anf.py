@@ -12,7 +12,7 @@ write_to_file_flag = True  # Flag to write input signal to file
 # Input signal creation
 ##############################################################################
 fs = 8000  # Sampling frequency
-freqs = [400, 2000]  # Frequencies to filter out
+freqs = [400, 1200]  # Frequencies to filter out
 
 t = np.arange(0, fs) / fs  # Time vector
 amplitude = 0.5  # Amplitude of input signal
