@@ -9,9 +9,9 @@
 /*****************************************************************************/
 
 #include "stdio.h"
-//#include "anf.h"
+#include "anf.h"
 
-extern int anf(int y, int *s, int *a, int *rho, unsigned int *index);
+// extern int anf(int y, int *s, int *a, int *rho, unsigned int *index);
 
 /* ------------------------------------------------------------------------ *
  *                                                                          *
