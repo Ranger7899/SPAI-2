@@ -1,7 +1,10 @@
 #include <aic3204.h>
 #include <usbstk5515.h>
 #include <stdio.h>
+
 #include "anf.h"
+
+// extern int anf(int y, int *s, int *a, int *rho, unsigned int *index);
 
 #define SAMPLES_PER_SECOND 8000
 #define GAIN_IN_dB 10
