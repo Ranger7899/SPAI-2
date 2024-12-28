@@ -32,9 +32,6 @@ int main() {
 
         // Output the processed signal to both left and right channels
         aic3204_codec_write(e, e);
-
-        // Debug print to monitor the input and output signals
-        printf("Left Input: %d, Right Input: %d, Output: %d\n", left_input, right_input, e);
     }
 
     return 0;
